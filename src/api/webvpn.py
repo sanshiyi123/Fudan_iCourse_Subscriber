@@ -553,7 +553,8 @@ class WebVPNSession:
 
         if str(data.get("code")) != "200":
             raise RuntimeError(
-                f"Authentication failed (code={data.get('code')})"
+                f"Authentication failed (code={data.get('code')}:)"
+             f"{data.get('message') or data.get('msg') or data}"
             )
 
         # loginToken is at top level, not nested under "data"
