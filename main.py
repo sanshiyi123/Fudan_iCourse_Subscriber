@@ -28,7 +28,7 @@ from src.ai.transcriber import Transcriber
 from src.api.webvpn import SecondFactorError, WebVPNSession
 
 
-def login_with_retry(max_attempts: int = 10) -> WebVPNSession:
+def login_with_retry(max_attempts: int = 1) -> WebVPNSession:
     """Login to WebVPN + iCourse CAS, retrying on transient failures.
 
     The iCourse CAS step (authenticate_icourse) has its own inner retry
